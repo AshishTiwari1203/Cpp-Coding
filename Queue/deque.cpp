@@ -22,6 +22,10 @@ int main()
     cout << "front element: " << d.front() << endl;
     d.pop_back();
     cout << "Back element: " << d.back() << endl;
+    dfjbfjbdf
+        kfbdwfnew
+            qknfjf
+                kansfkqsf
 
         return 0;
 }
