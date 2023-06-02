@@ -82,13 +82,73 @@ void level(node *root)
 // Input
 // 8 3 1 -1
 
+void inorder(node *root)
+{ // LNR
+    // Base Case
+    node *temp = root;
+    if (temp == NULL)
+    {
+        return;
+    }
+
+    inorder(temp->left);
+    cout << temp->data << " ";
+    inorder(temp->right);
+}
+
+void postorder(node *root)
+{ // LNR
+    // Base Case
+    node *temp = root;
+    if (temp == NULL)
+    {
+        return;
+    }
+
+    postorder(temp->left);
+    postorder(temp->right);
+    cout << temp->data << " ";
+}
+
+void preorder(node *root)
+{ // LNR
+    // Base Case
+    node *temp = root;
+    if (temp == NULL)
+    {
+        return;
+    }
+
+    cout << temp->data << " ";
+    preorder(temp->left);
+    preorder(temp->right);
+}
+
 int main()
 {
     node *root;
     int val;
     root = buildtree(root);
+
     cout << "Displaying the tree wih level" << endl;
     level(root);
+
+    // Inorder display(LNR)
+    cout << "Inorder Representaion: " << endl;
+    inorder(root);
+
+    // Preorder(NLR)
+    cout << endl
+         << "Preorder Representaion: " << endl;
+    preorder(root);
+
+    // Postorder(LRN)
+    cout << endl
+         << "Postorder Representaion: " << endl;
+    postorder(root);
+
+    // Inorder by iterative method
+    node *temp1 = root;
 
     return 0;
 }
